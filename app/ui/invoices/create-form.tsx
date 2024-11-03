@@ -21,7 +21,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
     <form action={formAction}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
 
-        
+
         {/* Customer Name */}
         <div className="mb-4">
           <label htmlFor="customer" className="mb-2 block text-sm font-medium">
@@ -134,6 +134,16 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                   {error}
                 </p>
               ))}
+          </div>
+          <div id="amount-error" aria-live="polite" aria-atomic="true">
+            {state.message &&
+              (Array.isArray(state.message)
+                ? state.message.map((message) => (
+                  <p className="mt-2 text-sm text-red-500" key={message}>
+                    {message}
+                  </p>
+                ))
+                : <p className="mt-2 text-sm text-red-500">{state.message}</p>)}
           </div>
         </fieldset>
       </div>
