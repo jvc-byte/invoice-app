@@ -1,13 +1,16 @@
 import { Metadata } from 'next';
- 
+import { lusitana } from '@/app/ui/fonts';
+
 export const metadata: Metadata = {
-  title: 'Customers',
+    title: 'Customers',
 };
 
 export default function Customer() {
     return (
         <div>
-            <p>Customer Page</p>
+            <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
+                Customer
+            </h1>
         </div>
     )
 };
